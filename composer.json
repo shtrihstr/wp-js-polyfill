@@ -1,0 +1,20 @@
+{
+    "name": "shtrihstr/wp-js-polyfill",
+    "description": "JavaScript polyfill for old browsers",
+    "type": "wordpress-muplugin",
+    "keywords": ["wordpress", "plugins", "polyfill", "ie"],
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Oleksandr Strikha",
+            "email": "alex@strikha.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "extra": {
+        "installer-name": "index"
+    }
+}
