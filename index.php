@@ -11,12 +11,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 add_action( 'wp_enqueue_scripts', function() {
-    $handle = 'js-polyfill';
-    $version = 'v0.1.27';
-    $protocol = is_ssl() ? 'https:' : 'http:';
-    $script_url = "$protocol//cdn.rawgit.com/inexorabletash/polyfill/$version/polyfill.min.js";
 
-    wp_enqueue_script( $handle, $script_url );
-    wp_script_add_data( $handle, 'conditional', 'lt IE 11' );
+    $protocol = is_ssl() ? 'https:' : 'http:';
+
+    wp_enqueue_script( 'js-polyfill', "$protocol//cdn.rawgit.com/inexorabletash/polyfill/v0.1.27/polyfill.min.js" );
+    wp_script_add_data( 'js-polyfill', 'conditional', 'lt IE 11' );
+
+    wp_enqueue_script( 'js-polyfill-json', "$protocol//cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.min.js" );
+    wp_script_add_data( 'js-polyfill-json', 'conditional', 'lt IE 11' );
+
 }, 0 );
 
